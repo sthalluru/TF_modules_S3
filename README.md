@@ -121,8 +121,8 @@ module "s3-bwq-data-val-us-west-2" {
 
   # Logging
   s3_bucket_logging              = true
-  s3_logging_bucket_name         = "macbis-dw-logs"
-  s3_replica_logging_bucket_name = "macbis-dw-logs-us-west-2"
+  s3_logging_bucket_name         = "Business-dw-logs"
+  s3_replica_logging_bucket_name = "business-dw-logs-us-west-2"
   s3_logging_prefix              = "s3-server-access-logs/<bucket_name>/"
 
   # Tags
