@@ -3,7 +3,7 @@
 resource "aws_s3_bucket" "replica" {
   /* If s3_bucket_replicate is set to true, this stanza will be evaluated.
      If s3_bucket_replicate is set to false, this stanza will be ignored and no
-     bucket will be created.
+     bucket will be created.*/
 
   count = var.s3_bucket_replicate ? 1 : 0
 
