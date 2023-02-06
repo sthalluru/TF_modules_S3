@@ -1,3 +1,4 @@
+/*Primary bucket module*/
 resource "aws_s3_bucket" "primary" {
   count = var.s3_bucket_replicate ? 1 : 0
 
@@ -44,7 +45,6 @@ resource "aws_s3_bucket" "primary" {
     role = aws_iam_role.replication[0].arn
 
     # If no specific/special replication rules provided, use standard full-bucket rule
-    # ["dummy"] is to give this dynamic block at least one value to loop over. The "dummy" value itself is not used.
     dynamic "rules" {
       for_each = var.s3_replication_rules == [] ? ["dummy"] : []
       content {
