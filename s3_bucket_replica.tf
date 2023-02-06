@@ -1,13 +1,9 @@
-/* This file is only evaluated if s3_bucket_replicate is set to true.
-*/
+/* This file is only evaluated if s3_bucket_replicate is set to true.*/
 
 resource "aws_s3_bucket" "replica" {
   /* If s3_bucket_replicate is set to true, this stanza will be evaluated.
      If s3_bucket_replicate is set to false, this stanza will be ignored and no
      bucket will be created.
-
-     For further explanation, see:
-     https://www.terraform.io/docs/configuration/interpolation.html */
 
   count = var.s3_bucket_replicate ? 1 : 0
 
