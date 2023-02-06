@@ -36,7 +36,7 @@ module "s3-<bucket_name>" {
   s3_lifecycle_noncurrent_expire = "<days>"
 
   s3_bucket_application = "<Group>: <application>"
-  s3_bucket_business    = "<TMSIS|AREMAC|OIG|etc>"
+  s3_bucket_business    = "<BUSINESS|OIG|etc>"
   s3_bucket_environment = "<prod|val|test|dev|tools|mgmt>"
   s3_bucket_layer       = "<data|apps|tools|mgmt|web|etc>"
   s3_bucket_responsible = "Channel: <slack channel>"
@@ -132,7 +132,7 @@ module "s3-bwq-data-val-us-west-2" {
   s3_bucket_layer       = "<layer>"
   s3_bucket_responsible = "Channel: <channel>"
   s3_bucket_stack       = "<env>"
-  s3_terraform_source   = "<macbisdw|tmsis>/configs/terraform/vpc_<env>/s3_<bucket_name>.tf"
+  s3_terraform_source   = "/configs/terraform/vpc_<env>/s3_<bucket_name>.tf"
 
   # This is a legacy data bucket; we keep data a long time.
   s3_lifecycle_enabled           = true
